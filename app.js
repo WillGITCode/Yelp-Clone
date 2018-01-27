@@ -15,12 +15,14 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-
-//seedDB(); // Seed database
-
+//old method to connect to local database
 //mongoose.connect("mongodb://localhost/yelp_camp", { useMongoClient: true });
-mongoose.connect("mongodb://WillDev:MongoDb@ds153412.mlab.com:53412/yelpcampdeploy", { useMongoClient: true });
-//mongodb://WillDev:MongoDb@ds153412.mlab.com:53412/yelpcampdeploy
+//old method to connect to MLab database
+//mongoose.connect("mongodb://WillDev:MongoDb@ds153412.mlab.com:53412/yelpcampdeploy", { useMongoClient: true });
+
+//new method using enviroment variable
+mongoose.connect(process.env.DATABASEURL, { useMongoClient: true });
+
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
