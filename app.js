@@ -15,13 +15,9 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-//old method to connect to local database
-//mongoose.connect("mongodb://localhost/yelp_camp", { useMongoClient: true });
-//old method to connect to MLab database
-//mongoose.connect("mongodb://WillDev:MongoDb@ds153412.mlab.com:53412/yelpcampdeploy", { useMongoClient: true });
-
 //new method using enviroment variable
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
+mongoose.connect(url);
 
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({ extended: true }));

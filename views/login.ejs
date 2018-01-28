@@ -1,11 +1,17 @@
 <% include ./partials/header %>
 
-<h1>Login</h1>
-
-<form action="/login" method="POST">
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <button>Login</button>
-</form>
-
-<% include ./partials/footer %>
+<div class="container">
+    <header class="jumbotron">
+        
+        <h1>Login</h1>
+        <p>Join in on the fun!</p>
+        
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+            <button class="btn btn-primary btn-md">Login</button>
+        </form>
+    </header>
+    
+    <% include ./partials/footer %>
+</div>
