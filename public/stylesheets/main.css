@@ -9,3 +9,30 @@
 .delete-form {
     display: inline;
 }
+
+.centered-jumbotron-heading {
+    text-align: center;
+}
+
+.styled-form {
+    margin: 10px auto;
+    width: 90%;
+}
+
+@media (min-width: 600px) {
+    .styled-form {
+        width: 50%;
+    }
+}
+
+@media (min-width: 900px) {
+    .styled-form {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .styled-form {
+        width: 30%;
+    }
+}

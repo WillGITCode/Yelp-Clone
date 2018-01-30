@@ -3,14 +3,29 @@
 <div class="container">
     <header class="jumbotron">
         
-        <h1>Login</h1>
-        <p>Join in on the fun!</p>
+        <div class="centered-jumbotron-heading">
+            <h1>Login</h1>
+            <p>Join in on the fun!</p>
+        </div>
+      
+        <div class="styled-form">
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input class="form-control" type="text" name="username" autocomplete="off" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" name="password" autocomplete="off" required />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-md btn-primary btn-block">Login</button>
+                </div>
+            </form>
+            <hr>
+            <a href="/campgrounds">Back</a>
+        </div>
         
-        <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
-            <button class="btn btn-primary btn-md">Login</button>
-        </form>
     </header>
     
     <% include ./partials/footer %>

@@ -16,12 +16,30 @@ router.get("/register", function(req, res) {
 });
 //handle sign up logic
 router.post("/register", function(req, res) {
-    var newUser = new User({ username: req.body.username });
-    User.register(newUser, req.body.password, function(err, user) {
+    var newUser = new User({
+        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        avatar: req.body.avatar
+    });
+
+    if (req.body.adminCode === "never give up") {
+        newUser.isAdmin = true;
+    }
+
+    User.register(newUser, req.body.password, (err, user) => {
         if (err) {
-            req.flash("error", err.message);
-            return res.render("register");
+            if (err.name === 'MongoError' && err.code === 11000) {
+                // Duplicate email
+                req.flash("error", "That email has already been registered.");
+                return res.redirect("/register");
+            }
+            // Some other error
+            req.flash("error", "Something went wrong...");
+            return res.redirect("/register");
         }
+
         passport.authenticate("local")(req, res, function() {
             req.flash("success", "Welcome to YelpCamp " + user.username);
             res.redirect("/campgrounds");
