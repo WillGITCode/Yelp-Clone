@@ -9,11 +9,11 @@ router.get("/", function(req, res) {
 
 
 // Auth Routes
-
-//show register form
+// Show register form
 router.get("/register", function(req, res) {
     res.render("register");
 });
+
 //handle sign up logic
 router.post("/register", function(req, res) {
     var newUser = new User({
@@ -51,6 +51,7 @@ router.post("/register", function(req, res) {
 router.get("/login", function(req, res) {
     res.render("login");
 });
+
 //handle login logic
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/campgrounds",

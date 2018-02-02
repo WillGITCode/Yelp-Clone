@@ -5,15 +5,13 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-    Campground = require("./models/campground"),
     flash = require("connect-flash"),
-    Comment = require("./models/comment"),
-    User = require("./models/user"),
-    seedDB = require("./seeds");
+    User = require("./models/user");
 
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes = require("./routes/index");
+    indexRoutes = require("./routes/index"),
+    userRoutes = require("./routes/users");
 
 //new method using enviroment variable
 var url = process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
@@ -33,6 +31,8 @@ app.use(require("express-session")({
     saveUninitialized: false
 }));
 
+app.locals.moment = require('moment');
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -51,6 +51,7 @@ app.use(function(req, res, next) {
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/users", userRoutes);
 
 
 app.listen(process.env.PORT, process.env.IP, function() {
