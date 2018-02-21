@@ -14,7 +14,7 @@ var commentRoutes = require("./routes/comments"),
     userRoutes = require("./routes/users");
 
 //new method using enviroment variable
-var url = process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
+var url = process.env.DATABASEURL || 'mongodb://127.0.0.1:27017/v13';
 mongoose.connect(url);
 
 mongoose.Promise = global.Promise;
