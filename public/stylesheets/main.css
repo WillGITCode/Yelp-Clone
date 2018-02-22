@@ -12,7 +12,7 @@ body{
     border: none;
 }
 
-.navbar-default, .navbar-default .navbar-brand, .navbar-nav li a{
+.navbar-default, .navbar-default .navbar-brand, .navbar-default .navbar-nav li a{
     color: #242424;
 }
 
