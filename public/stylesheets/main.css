@@ -6,7 +6,7 @@ body{
     color: rgb(212, 212, 212);
 }
 
-.jumbotron{
+.navbar, .jumbotron{
     color: #3b3b3b;
     background-color: rgb(170, 170, 170);
 }
