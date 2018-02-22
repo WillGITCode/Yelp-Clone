@@ -7,9 +7,13 @@ body{
 }
 
 .navbar, .jumbotron{
-    color: #242424;
+    color: #7c7c7c;
     background-color: #dcdcdc;
     border: none;
+}
+
+.navbar-default, .navbar-default navbar-brand{
+    color: #242424;
 }
 
 .thumbnail img {
