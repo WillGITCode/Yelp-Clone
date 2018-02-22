@@ -3,12 +3,12 @@ body{
 }
 
 .index-subtitle{
-    color: rgb(199, 199, 199);
+    color: #dcdcdc;
 }
 
 .navbar, .jumbotron{
     color: #242424;
-    background-color: rgb(199, 199, 199);
+    background-color: #dcdcdc;
     border: none;
 }
 
@@ -19,7 +19,8 @@ body{
 .thumbnail {
     padding: 0;
     color: #242424;
-    background-color: rgb(199, 199, 199);
+    background-color: #dcdcdc;
+    border: none;
 }
 
 .delete-form {
@@ -37,7 +38,7 @@ body{
 
 .well, .list-group-item{
     color: #242424;
-    background-color: rgb(199, 199, 199);
+    background-color: #dcdcdc;
 }
 
 @media (min-width: 600px) {
