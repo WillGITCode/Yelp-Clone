@@ -12,7 +12,7 @@ body{
     border: none;
 }
 
-.navbar-default, .navbar-default, .navbar-brand{
+.navbar-default, .navbar-default .navbar-brand{
     color: #242424;
 }
 
