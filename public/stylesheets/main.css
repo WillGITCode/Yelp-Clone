@@ -34,6 +34,11 @@ body{
     width: 90%;
 }
 
+.well, .list-group-item{
+    color: #3b3b3b;
+    background-color: rgb(170, 170, 170);
+}
+
 @media (min-width: 600px) {
     .styled-form {
         width: 50%;
